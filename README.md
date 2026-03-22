@@ -19,11 +19,13 @@ Se configuró un volumen para servir contenido HTML desde el equipo local y se e
 
 ## Estructura del proyecto
 
+```
 practica-nginx-docker/
 │
 ├── docker-compose.yml
 └── src/
-└── index.html
+    └── index.html
+```
 
 ---
 
@@ -42,19 +44,41 @@ services:
       - "8080:80"
     volumes:
       - ./src:/usr/share/nginx/html
-      Ejecución del proyecto
+```
+
+---
+
+## Ejecución del proyecto
 
 Para ejecutar el contenedor:
 
+```
 docker compose up -d
+```
 
 Luego abrir en el navegador:
 
-http://localhost:8080
-
-Resultado
-
-![alt text](image.png)
-
-![alt text](image-1.png)
 ```
+http://localhost:8080
+```
+
+---
+
+## Resultado
+
+![Servidor Nginx](image.png)
+
+![Contenedor Docker](image-1.png)
+
+---
+
+## Notas
+
+- Se utilizó un volumen para permitir la actualización automática del contenido sin reiniciar el contenedor.
+- El puerto 8080 fue mapeado al puerto 80 del contenedor.
+
+---
+
+## Autor
+
+Yeliana Díaz
